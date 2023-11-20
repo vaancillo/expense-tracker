@@ -1,6 +1,12 @@
-function App() {
+import { GlobalProvider } from './context/GlobalState'
+import Header from './components/Header'
+
+function App () {
   return (
-    <div>Hello world</div>
+    <GlobalProvider>
+      <Header />
+      <h1>React Context</h1>
+    </GlobalProvider>
   )
 }
 export default App
