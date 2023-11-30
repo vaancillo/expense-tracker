@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useGlobalState } from '../../context/GlobalState'
+import { v4 as uuidv4 } from 'uuid'
 
 function TransactionForm () {
   const { addTransaction } = useGlobalState()
@@ -9,9 +10,9 @@ function TransactionForm () {
   const onSubmit = (e) => {
     e.preventDefault()
     addTransaction({
-      id: window.crypto.randomUUID,
+      id: uuidv4(),
       description,
-      amount
+      amount: +amount
     })
   }
 
