@@ -1,14 +1,13 @@
-import { useGlobalState } from "../context/GlobalState"
+import { useGlobalState } from '../context/GlobalState'
 
 const IncomeExpenses = () => {
+  const { transactions } = useGlobalState()
 
-    const { transactions } = useGlobalState()
+  const amount = transactions.map(transaction => transaction.amount)
 
-    const amount = transactions.map(transaction => transaction.amount)
+  const income = amount.filter(item => item > 0).reduce((acc, item) => (acc += item), 0)
 
-    const income = amount.filter(item => item > 0).reduce((acc, item) => (acc += item), 0)
-
-    const expense = amount.filter(item => item < 0).reduce((acc, item) => (acc += item), 0)
+  const expense = amount.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1
 
   return (
     <>
