@@ -4,7 +4,7 @@ function Balance () {
   const { transactions } = useGlobalState()
 
   const amoutns = transactions.map(transaction => transaction.amount)
-  const total = amoutns.reduce((acc, item) => (acc += item), 0)
+  const total = amoutns.reduce((acc, item) => (acc += item), 0).toFixed(2)
 
   return (
     <>
