@@ -11,9 +11,8 @@ const ExpenseChart = () => {
   ) * -1
 
   const totalExpensePercentage = Math.round((totalExpense / totalIncome) * 100)
-  console.log(totalExpensePercentage)
+
   const totalIncomePercentage = 100 - totalExpensePercentage
-  console.log(totalIncomePercentage)
 
   return (
     <div>
