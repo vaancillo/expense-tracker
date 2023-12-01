@@ -8,10 +8,10 @@ function Balance () {
 
   return (
     <>
-      <div>Balance</div>
+      <div className='flex justify-between'>Balance</div>
       <div>
         <h4>Your Balance</h4>
-        <h1>${total}</h1>
+        <h1 className='text-2xl font-bold'>${total}</h1>
       </div>
     </>
   )
